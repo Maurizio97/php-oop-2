@@ -63,12 +63,13 @@ class Person {
     }
 
     public function printFullPerson(){
-        return $this -> getName() . " "
-        . $this -> getSurname() . ": "
-        . $this -> getdateOfBir()
-        . "<br>";
+        // return $this -> getName() . " "
+        // . $this -> getSurname() . ": "
+        // . $this -> getdateOfBir()
+        // . "<br>";
 
-        // $this -> getName() . $this -> getSurname() . ": " . $this -> getdateOfBir(). "<br>";
+        return $this -> getName() . " " . $this -> getSurname() 
+        . ($this -> getdateOfBir() ? ": " . $this -> getdateOfBir() . "<br>": "");
     }
 
     public function __toString(){
@@ -105,11 +106,16 @@ class Employee extends Person{
     }
 
     public function printFullEmployee(){
-        return $this -> getName() . " "
-        . $this -> getSurname() . ": "
-        . $this -> getSalary()
-        . "(" . $this -> getdateOfHiring() . ")"
-        . "<br>";
+        // return $this -> getName() . " "
+        // . $this -> getSurname() . ": "
+        // . $this -> getSalary()
+        // . "(" . $this -> getdateOfHiring() . ")"
+        // . "<br>";
+
+        if($this -> getdateOfHiring())
+        return parent::printFullPerson() . ": "
+        . $this -> getSalary() . " "
+        . "(" . $this -> getdateOfHiring() . ")" . "<br>";
     }
 }
 
