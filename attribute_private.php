@@ -123,7 +123,7 @@ $person1 = new Person("Maurizio", "Proietto");
 
 $person1 -> setdateOfBir("09/07/1997");
 
-$person1Emp = new Employee("Maurizio", "Proietto" ,"1500 euro");
+$person1Emp = new Employee($person1 -> getName(), $person1 -> getSurname(), "1500 euro");
 
 $person1Emp -> setdateOfHiring("01/01/2020");
 
