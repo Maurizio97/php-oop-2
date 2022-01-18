@@ -63,13 +63,15 @@ class Person {
     }
 
     public function printFullPerson(){
+        
+        return $this -> getName() . " " . $this -> getSurname() 
+        . ($this -> getdateOfBir() ? ": " . $this -> getdateOfBir() . "<br>": "");
+
         // return $this -> getName() . " "
         // . $this -> getSurname() . ": "
         // . $this -> getdateOfBir()
         // . "<br>";
 
-        return $this -> getName() . " " . $this -> getSurname() 
-        . ($this -> getdateOfBir() ? ": " . $this -> getdateOfBir() . "<br>": "");
     }
 
     public function __toString(){
@@ -84,6 +86,7 @@ class Employee extends Person{
     private $salary;
     private $dateOfHiring;
 
+    // setter/getter
     public function getSalary(){
         return $this -> salary;
     }
@@ -99,23 +102,26 @@ class Employee extends Person{
     public function setdateOfHiring($dateOfHiring){
         $this -> dateOfHiring = $dateOfHiring;
     }
+    // setter/getter
 
+    
     public function __construct($name, $surname, $salary){
         parent::__construct($name, $surname);
         $this -> setSalary($salary);
     }
 
     public function printFullEmployee(){
-        // return $this -> getName() . " "
-        // . $this -> getSurname() . ": "
-        // . $this -> getSalary()
-        // . "(" . $this -> getdateOfHiring() . ")"
-        // . "<br>";
 
         if($this -> getdateOfHiring())
         return parent::printFullPerson() . ": "
         . $this -> getSalary() . " "
         . "(" . $this -> getdateOfHiring() . ")" . "<br>";
+
+        // return $this -> getName() . " "
+        // . $this -> getSurname() . ": "
+        // . $this -> getSalary()
+        // . "(" . $this -> getdateOfHiring() . ")"
+        // . "<br>";
     }
 }
 
