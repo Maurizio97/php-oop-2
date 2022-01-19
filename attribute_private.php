@@ -123,6 +123,10 @@ class Employee extends Person{
         // . "(" . $this -> getdateOfHiring() . ")"
         // . "<br>";
     }
+
+    public function __toString(){
+        return $this -> printFullEmployee();
+    }
 }
 
 $person1 = new Person("Maurizio", "Proietto");
